@@ -9,13 +9,12 @@ class SpotOn::GetUrls
   end
 
   def get_urls
-    @str
-    resource = Net::HTTP.new('stackoverflow.com', '/index.html')
+    # resource = Net::HTTP.new(@str).get(@str)
     # headers, data = resource.get('/robots.txt')
     # data
-    resource
-
-    uri = URI('http://www.eventbrite.com/')
+    # resource.get('/index.html')
+    # resource
+    uri = URI(@str)
     Net::HTTP.get(uri)
   end
 end
