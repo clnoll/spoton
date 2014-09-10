@@ -1,13 +1,13 @@
 class SpotOn::GetUrls
 
   def initialize(str)
-    @str = str.split(" ")
+    @str = str
     # @non_word = non_word
     @urls = []
   end
 
   def get_urls
-    "hi"
+    @str
     # @str.map do |i|
     #   if /\A[AEIOUaeiou]+/.match(i)
     #     starts_with_vowels(i)

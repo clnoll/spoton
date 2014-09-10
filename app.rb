@@ -1,11 +1,10 @@
 require 'sinatra'
-# require "sinatra/json"
-# require 'pry-debugger'
 require 'json'
+require_relative 'lib/spoton.rb'
 set :bind, '0.0.0.0'
 
 get '/url' do
-  erb :layout
+  erb :get_url
 end
 
 post '/url' do
