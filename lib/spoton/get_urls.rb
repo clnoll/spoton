@@ -1,3 +1,5 @@
+require 'net/http'
+
 class SpotOn::GetUrls
 
   def initialize(str)
@@ -8,17 +10,12 @@ class SpotOn::GetUrls
 
   def get_urls
     @str
-    # @str.map do |i|
-    #   if /\A[AEIOUaeiou]+/.match(i)
-    #     starts_with_vowels(i)
-    #   elsif /\A[Yy]+/.match(i)
-    #     starts_with_y(i)
-    #   elsif /\A[Qq]/.match(i)
-    #     starts_with_qu(i)
-    #   elsif /\A[^AEIOUYaeiouy]+/.match(i)
-    #     starts_with_cons(i)
-    #   end
-    # end
-    # @@translated_words.join(' ')
+    resource = Net::HTTP.new('stackoverflow.com', '/index.html')
+    # headers, data = resource.get('/robots.txt')
+    # data
+    resource
+
+    uri = URI('http://www.eventbrite.com/')
+    Net::HTTP.get(uri)
   end
 end
