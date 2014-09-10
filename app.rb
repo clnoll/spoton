@@ -1,6 +1,6 @@
 require 'sinatra'
-require "sinatra/json"
-require 'pry-debugger'
+# require "sinatra/json"
+# require 'pry-debugger'
 require 'json'
 set :bind, '0.0.0.0'
 
