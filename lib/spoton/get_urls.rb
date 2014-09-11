@@ -1,4 +1,6 @@
-require 'net/http'
+# require 'net/http'
+require 'open-uri'
+require 'nokogiri'
 
 class SpotOn::GetUrls
 
@@ -9,12 +11,11 @@ class SpotOn::GetUrls
   end
 
   def get_urls
-    # resource = Net::HTTP.new(@str).get(@str)
-    # headers, data = resource.get('/robots.txt')
-    # data
-    # resource.get('/index.html')
-    # resource
-    uri = URI(@str)
-    Net::HTTP.get(uri)
+    uri = URI.parse(@str)
+    get_host = uri.host
+    base = URI.parse("http://#{get_host}")
+    doc = Nokogiri::HTML(open(base))
+    doc.css('a').each {|i| @urls << i['href'] }
+    @urls
   end
 end

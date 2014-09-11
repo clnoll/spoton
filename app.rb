@@ -1,9 +1,8 @@
 require 'sinatra'
 require 'json'
 require_relative 'lib/spoton.rb'
-require 'pry-byebug'
 
-set :bind, '0.0.0.0'
+set :bind, '10.10.10.10'
 
 get '/url' do
   erb :get_url
