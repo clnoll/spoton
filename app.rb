@@ -15,4 +15,8 @@ class SpotOn::App < Sinatra::Application
     puts @urls
     erb :result
   end
+
+  get "/" do
+    redirect '/url'
+  end
 end
